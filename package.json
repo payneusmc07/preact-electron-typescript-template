@@ -1,0 +1,57 @@
+{
+	"name": "snowpack-electron-preact-template",
+	"productName": "snowpack-electron-preact-template",
+	"version": "1.0.0",
+	"license": "MIT",
+	"description": "Template for snowpack, electron , preact, typescript with support for styled components and emotion css",
+	"main": "./main/index.ts",
+	"scripts": {
+		"init": "yarn install --no-lockfile",
+		"dev": "concurrently -k \"yarn run snowpack-dev\" \"yarn run electron-start\"",
+		"build": "yarn run snowpack-build",
+		"electron-start": "tsc && electron .",
+		"electron-prod": "cross-env NODE_ENV=production electron .",
+		"snowpack-dev": "snowpack dev --open none",
+		"snowpack-prepare": "snowpack install",
+		"snowpack-build": "snowpack build"
+	},
+	"dependencies": {
+		"@emotion/babel-preset-css-prop": "^11.2.0",
+		"@emotion/css": "^11.1.3",
+		"@babel/preset-env": "^7.13.10",
+		"autoprefixer": "^10.2.5",
+		"connected-react-router": "^6.9.1",
+		"preact": "^10.5.12",
+		"preact-helmet": "^4.0.0-alpha-3",
+		"preact-router": "^3.2.1",
+		"prop-types": "^15.7.2",
+		"react-router": "^5.2.0",
+		"styled-components": "^5.2.1",
+		"styled-jsx-plugin-sass": "^1.0.0",
+		"tailwindcss": "^2.0.3"
+	},
+	"devDependencies": {
+		"@prefresh/snowpack": "^3.0.0",
+		"@snowpack/plugin-dotenv": "^2.0.5",
+		"@snowpack/plugin-postcss": "^1.1.0",
+		"@snowpack/plugin-sass": "^1.3.0",
+		"@snowpack/plugin-typescript": "^1.2.0",
+		"@types/node": "^14.14.31",
+		"@types/styled-components": "^5.1.7",
+		"@types/styled-jsx": "^2.2.8",
+		"concurrently": "6.0.0",
+		"cross-env": "^7.0.3",
+		"electron": "12.0.0",
+		"module-alias": "^2.2.2",
+		"preact-cli": "^3.0.5",
+		"preact-cli-tailwind": "^2.0.1",
+		"sass": "^1.32.8",
+		"snowpack": "^3.0.11"
+	},
+	"_moduleAliases": {
+		"@helpers/*": ["lib/helpers"],
+		"@utils/*": ["lib/utils"],
+		"@ipc/*": ["lib/ipc"],
+		"@constants/*": ["lib/ipc/constants"]
+	}
+}
